@@ -1,24 +1,24 @@
-//Values changed after using & in prototyping and defination  performance no effecr
+//refs changed after using & in prototyping and defination  performance no effecr
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
 
-void pass_by_value1(int &num);
-void pass_by_value2(string &s);
-void pass_by_value3(vector<string> &v);
+void pass_by_ref1(int &num);
+void pass_by_ref2(string &s);
+void pass_by_ref3(vector<string> &v);
 void print_vector(vector<string> &v);
 
-void pass_by_value1(int &num) {
+void pass_by_ref1( int &num) {
     num = 1000;
 }
 
-void pass_by_value2(string &s) {
+void pass_by_ref2(string &s) {
     s = "Changed";
 }
 
-void pass_by_value3(vector<string> &v) {
+void pass_by_ref3(vector<string> &v) {
     v.clear();  // delete all vector elements
 }
 
@@ -33,24 +33,24 @@ int main() {
     int num {10};
     int another_num {20};
     
-    cout << "num before calling pass_by_value1: " << num << endl;
-    pass_by_value1(num);
-    cout << "num after calling pass_by_value1: " << num << endl;
+    cout << "num before calling pass_by_ref1: " << num << endl;
+    pass_by_ref1(num);
+    cout << "num after calling pass_by_ref1: " << num << endl;
     
-    cout << "\nanother_num before calling pass_by_value1: " << another_num << endl;
-    pass_by_value1(another_num);
-    cout << "another_num after calling pass_by_value1: " << another_num << endl;
+    cout << "\nanother_num before calling pass_by_ref1: " << another_num << endl;
+    pass_by_ref1(another_num);
+    cout << "another_num after calling pass_by_ref1: " << another_num << endl;
 
     string name {"Frank"};
-    cout << "\nname before calling pass_by_value2: " << name << endl;
-    pass_by_value2(name);
-    cout << "name after calling pass_by_value2: " << name << endl;
+    cout << "\nname before calling pass_by_ref2: " << name << endl;
+    pass_by_ref2(name);
+    cout << "name after calling pass_by_ref2: " << name << endl;
 
     vector<string> stooges {"Larry", "Moe", "Curly"};
-    cout << "\nstooges before calling pass_by_value3: ";
+    cout << "\nstooges before calling pass_by_ref3: ";
     print_vector(stooges);
-    pass_by_value3(stooges);  //set values
-    cout << "stooges after calling pass_by_value3: ";
+    pass_by_ref3(stooges);  //set refs
+    cout << "stooges after calling pass_by_ref3: ";
     print_vector(stooges); // we expected ..cleared vector..but no clear
     
     cout << endl;
@@ -61,13 +61,13 @@ int main() {
 /*
 OUTPUT:
 
-num before calling pass_by_value1: 10
-num after calling pass_by_value1: 1000
+num before calling pass_by_ref1: 10
+num after calling pass_by_ref1: 1000
 
-another_num before calling pass_by_value1: 20
-another_num after calling pass_by_value1: 1000
-name before calling pass_by_value2: Frank
-name after calling pass_by_value2: Changed
+another_num before calling pass_by_ref1: 20
+another_num after calling pass_by_ref1: 1000
+name before calling pass_by_ref2: Frank
+name after calling pass_by_ref2: Changed
 
-stooges before calling pass_by_value3: Larry Moe Curly 
-stooges after calling pass_by_value3: */
+stooges before calling pass_by_ref3: Larry Moe Curly 
+stooges after calling pass_by_ref3: */
