@@ -57,3 +57,76 @@ int main() {
     cout << endl;
     return 0;
 }
+
+
+
+
+//DONT CONFUSE........................................................
+
+//NORMAL WE REQUIRE
+#include <iostream>
+using namespace std;
+
+void addAndPrintSum(int num1, int num2)         //perform -cout result
+//you think..here how we are not using '&'...note..changes or performance is reflected in result.
+//.just value change is not visible
+//eg=set num1=50;
+{
+    cout << "Sum: " << num1 + num2 << endl;
+}
+
+int main()                                    //cin 
+{
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    addAndPrintSum(a, b);
+    return 0;
+}
+
+//CHANGE 1 Value
+#include <iostream>
+using namespace std;
+
+void addAndPrintSum(int num1, int num2)         
+{
+    num1=50;
+    num2=50;
+    cout << "Sum: " << num1 + num2 << endl;
+}
+
+int main()                                    //cin 
+{
+    int a=70;
+    int b=70;
+    addAndPrintSum(a, b);   //output is 100..50+50 not 70+70 as local preference..
+                            //conclusion is that a and b remain 70 even after call
+    cout<<"a="<<a<<" "<<"b="<<b<<endl;    //a=70 and b=70 not a=50 b=50
+    
+    return 0;
+}
+
+//CHANGE 1 Reference
+#include <iostream>
+using namespace std;
+
+void addAndPrintSum(int &num1, int &num2)      //reference   
+{
+    num1=50;
+    num2=50;
+    cout << "Sum: " << num1 + num2 << endl;
+}
+
+int main()                                    //cin 
+{
+    int a=70;
+    int b=70;
+    addAndPrintSum(a, b);   //output is 100..50+50 not 70+70 as local preference..  no change to performance
+                            //conclusion is that a and b change  after call
+    cout<<"a="<<a<<" "<<"b="<<b<<endl;    //a=50 and b=50 not a=70 b=70  CHANGE MADE IN REFERENCE
+    
+    return 0;
+}
+    
+
+
