@@ -27,3 +27,38 @@ int main() {
     cout << endl;
     return 0;
 }
+
+
+//try
+#include<iostream>
+using namespace std;
+int main()
+{
+    int *ptr=nullptr;
+    
+    //entering heap........
+    ptr=new int;
+    
+    cout<<"Pointer points address in heap ,which is :"<<ptr; //in heap not stack
+    
+    delete ptr;  //need Deallocation 
+    //leaving heap.........
+    
+    
+    //+-+-+-+-+-+-+-+-+-+-=-=-=-
+    
+    double *dblptr=nullptr;
+    int size;
+    
+     cout<<"\nHow many doubles? :"<<endl;
+     cin>>size;
+          //while(true)  //check bad_alloc
+     
+     dblptr=new double[size];
+     
+     cout<<"\nPointer points address in heap of double ,which is :"<<dblptr;
+     
+     delete[] dblptr;
+    
+    return 0;
+}
