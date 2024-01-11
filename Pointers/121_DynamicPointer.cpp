@@ -62,3 +62,75 @@ int main()
     
     return 0;
 }
+
+
+
+
+
+
+
+//-----------------------------------------------
+#include<iostream>
+using namespace std;
+
+void PrintArr(int *arr, int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        cout << arr[i] << endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "Enter size:" << endl;
+    cin >> n;
+
+    int testArr[n];
+
+    cout << "Enter elements:" << endl;
+    for(int i = 0; i < n; i++)
+    {
+        cin >> testArr[i];
+    }
+
+    int *ptr = testArr;
+
+    PrintArr(ptr, n);
+
+    return 0;
+}
+
+//=======================================================
+#include<iostream>
+using namespace std;
+
+void PrintArr(int *arr,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+   
+}
+int main()
+{
+    int n;
+    cout<<"Enter size:"<<endl;
+    cin>>n;
+    int *ptr;
+    
+    ptr=new int[n];  
+    
+    cout<<"Enter elements"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>ptr[i];
+    }
+    PrintArr(ptr,n);
+    delete[] ptr;
+    
+   
+    return 0;
+}
