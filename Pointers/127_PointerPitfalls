@@ -1,0 +1,4 @@
+1 Uninitialized Pointers
+2 Dangling Pointers
+3 Not checking i new failed
+4 Leaking memory
