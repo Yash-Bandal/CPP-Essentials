@@ -56,6 +56,19 @@ int main()
     return 0;
 }
 
+/*
+For the first iteration of the inner loop (j = 0):
+
+new_arr[k] = arr1[j] * arr2[i]; translates to new_arr[k] = 1 * 10;, so new_arr[k] is assigned the value 10.
+Increment k to move to the next position in new_arr.
+For the second iteration of the inner loop (j = 1):
+
+new_arr[k] = arr1[j] * arr2[i]; translates to new_arr[k] = 2 * 10;, so new_arr[k] is assigned the value 20.
+Increment k to move to the next position in new_arr.
+This process continues until the inner loop completes all iterations for the given i (assuming it's the first iteration of the outer loop). 
+The result is the first set of products for the given combination of elements from arr1 and arr2.
+*/
+
 
 
 
