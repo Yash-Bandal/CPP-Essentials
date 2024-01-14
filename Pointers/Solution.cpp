@@ -41,7 +41,7 @@
 using namespace std;
 
 // Function prototypes
-int * apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2);
+int *apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2);
 void print(const int *const array, size_t size);
 
 
@@ -56,16 +56,16 @@ This function expects:
     Then it loops through each element of arr2 and multiples it across all the
     elements of arr1 and each product is stored in the newly created array
 ********************************************************************/
-int * apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2) {
+int * apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2) 
+{
     int *new_array {};
-    
     new_array = new int[size1 * size2];
     
     int position {0};
     for (size_t i{0}; i < size2; ++i) {
         for (size_t j{0}; j< size1; ++j) {
             new_array[position] = arr1[j] * arr2[i];
-            ++position;
+            position++;
         }
     }
     return new_array;
