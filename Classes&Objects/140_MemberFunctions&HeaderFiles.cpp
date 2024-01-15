@@ -72,6 +72,11 @@ int main() {
     return 0;
 }
 
+
+
+
+
+
 //===========================================================
 // Section 13
 // Implementing member methods 2
@@ -88,7 +93,7 @@ class Account
         void set_balance(double bal);
         double get_balance();
 };
-
+#endif
 //or Account.h #pragma once
 #pragma once
 
@@ -119,7 +124,7 @@ int main() {
 }
 
 
-#endif
+
 
 
 //=============================================================================================
