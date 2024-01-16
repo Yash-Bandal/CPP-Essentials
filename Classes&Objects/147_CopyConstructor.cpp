@@ -82,3 +82,84 @@ int main() {
         
     return 0;
 }
+
+
+
+//My try
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Player
+{
+  private:
+  std::string name;
+  int health;
+  int xp;
+  
+  public:
+  std::string getname()
+  {
+      return name;
+  }
+  int gethealth()
+  {
+      return health;
+  }
+  int getxp()
+  {
+      return xp;
+  }
+  
+  Player(std::string name="None",int health=0,int xp=0);  //just prototupe of 3arg const with default set values
+//   {
+      
+//       cout<<"0 arg constructor"<<endl;
+//   }
+  
+  Player(const Player &sourcobj);
+  
+  ~Player()
+  {
+      cout<<"Destructor Called"<<endl;
+  }
+  
+};
+//3 arg const
+Player::Player(std::string nameVal,int hval,int xpval):name(nameVal),health(hval),xp(xpval)
+{
+    cout<<"3 arg construnconstructor"<<endl;
+}
+
+//member constructor
+Player::Player(const Player &sourcobj)
+:name(sourcobj.name),health(sourcobj.health),xp(sourcobj.xp)
+//     or use delegating constructor:
+ //      : Player {source.name, source.health, source.xp}
+{
+ cout<<"Copy Constructor"<<endl;   
+}
+
+
+// pass by-value (copy)  
+void display_player(Player obj)
+{
+    cout << "Name: " << obj.getname() << endl;
+    cout << "Health: " << obj.gethealth() << endl;
+    cout << "XP: " << obj.getxp() << endl;    
+}
+
+int main()
+{
+    Player Yash;
+    Player Lala{"Don",1000,100};
+    
+   Player CopyObjectLala{Lala};  //Lala passed as source
+    
+    display_player(Lala);  //gives copy constructor op
+    
+    
+    return 0;
+    
+}
+
