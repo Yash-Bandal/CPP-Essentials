@@ -70,7 +70,7 @@ int main() {
     Player my_new_object {empty}; //pass obj
     cout<<endl;
     
-    display_player(empty);
+    display_player(empty); 
     cout<<endl;
     
     Player yash {"yash"};
@@ -156,7 +156,7 @@ int main()
     
    Player CopyObjectLala{Lala};  //Lala passed as source
     
-    display_player(Lala);  //gives copy constructor op
+    display_player(Lala);  //gives copy constructor op  as a constructor copy is created in heap storage within (   'here copy of lala'   )
     
     
     return 0;
