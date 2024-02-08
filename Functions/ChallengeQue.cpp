@@ -1,5 +1,3 @@
-
-
 // Section 11
 // Challenge - Solution
 
