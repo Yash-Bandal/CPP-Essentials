@@ -3,7 +3,6 @@ without argyment...cin perform that is take in input and perform inside
 
 with argument.....always perform inside
 
-
 mostly use 
 with argument with returntype
 double name(argument)
