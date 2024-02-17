@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    //! d vector
+    //! d vector 
     int n;
     cout<<"How many elements you want\n"<<endl;
     cin>>n;
