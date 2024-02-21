@@ -2,7 +2,6 @@
 #include<iostream>
 #include<cstring>  //for c strings
 #include<cctype>   //character functions
-
 using namespace std;
 int main()
 {
