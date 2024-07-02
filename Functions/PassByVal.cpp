@@ -106,6 +106,38 @@ int main()                                    //cin
     
     return 0;
 }
+//note arrays are never passed as value
+#include <iostream>
+
+// Function to modify array elements
+void modifyArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        arr[i] += 10; // Modify each element
+    }
+}
+
+int main() {
+    int myArray[5] = {1, 2, 3, 4, 5};
+
+    std::cout << "Original array: ";
+    for (int i = 0; i < 5; ++i) {
+        std::cout << myArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    modifyArray(myArray, 5); // Passing the array to the function
+
+    std::cout << "Modified array: ";
+    for (int i = 0; i < 5; ++i) {
+        std::cout << myArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+// Original array: 1 2 3 4 5 
+// Modified array: 11 12 13 14 15 
+
 
 
 //CHANGE 1 Reference
