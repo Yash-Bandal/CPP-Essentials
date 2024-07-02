@@ -90,14 +90,15 @@ using namespace std;
 
 void addAndPrintSum(int num1, int num2)         
 {
-    num1=50;
+    // cout<<num1<<num2<<endl;  //here copy of a and b 70 70 brought up
+    num1=50;    //we made changes in copy
     num2=50;
     cout << "Sum: " << num1 + num2 << endl;
 }
 
 int main()                                    //cin 
 {
-    int a=70;
+    int a=70; //actual..copy sent above
     int b=70;
     addAndPrintSum(a, b);   //output is 100..50+50 not 70+70 as local preference..
                             //conclusion is that a and b remain 70 even after call
@@ -106,24 +107,25 @@ int main()                                    //cin
     return 0;
 }
 
+
 //CHANGE 1 Reference
 #include <iostream>
 using namespace std;
 
 void addAndPrintSum(int &num1, int &num2)      //reference   
 {
-    num1=50;
+    num1=50;  //2. we made changes 70-> 50
     num2=50;
-    cout << "Sum: " << num1 + num2 << endl;
+    cout << "Sum: " << num1 + num2 << endl;  //3 we print sum
 }
 
 int main()                                    //cin 
 {
-    int a=70;
+    int a=70;    
     int b=70;
-    addAndPrintSum(a, b);   //output is 100..50+50 not 70+70 as local preference..  no change to performance
+    addAndPrintSum(a, b);    //1. this a and b sent up             //output is 100..50+50 not 70+70 as local preference..  no change to performance
                             //conclusion is that a and b change  after call
-    cout<<"a="<<a<<" "<<"b="<<b<<endl;    //a=50 and b=50 not a=70 b=70  CHANGE MADE IN REFERENCE
+    cout<<"a="<<a<<" "<<"b="<<b<<endl;    //4. a=50 and b=50 not a=70 b=70  CHANGE MADE IN REFERENCE
     
     return 0;
 }
