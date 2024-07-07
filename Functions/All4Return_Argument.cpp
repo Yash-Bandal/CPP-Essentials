@@ -15,6 +15,42 @@ void name()
 
 
 
+//Additional vector type return an array of vectors
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> div(int n)
+{
+    vector<int> divisors;
+    for (int i = 1; i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            divisors.push_back(i);
+        }
+    }
+    return divisors;
+}
+
+int main()
+{
+    int n;
+    cout << "Enter Number" << endl;
+    cin >> n;
+
+    cout << "The Divisors are :" << endl;
+    vector<int> divisors = div(n);
+    for (int i = 0; i < divisors.size(); i++)
+    {
+        cout << divisors[i] << endl;
+    }
+
+    return 0;
+}
+)
+
 
 //Function without Return Type and without Arguments:
 #include <iostream>
