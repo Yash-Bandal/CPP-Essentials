@@ -122,3 +122,38 @@ int main() {
     cout << endl;
     return 0;
 }
+/*
+How to Imagine npos:
+You can think of npos as a marker for "no position" or "an unreachable index", sitting infinitely far outside the string. Here's a mental model:
+
+Imagine a string like this:
+Hello
+Indexes: 0 1 2 3 4
+
+If you ask for npos, you’re saying,
+“I’m not pointing at any of these indexes; I’m pointing to an invalid position beyond the string.”
+
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str = "Hello, World!";
+    size_t pos = str.find('z'); // 'z' doesn't exist in the string
+
+    cout << "Value of npos: " << string::npos << endl;
+    cout << "Position returned by find(): " << pos << endl;
+
+    if (pos == string::npos) {
+        cout << "'z' was not found in the string.\n";
+    }
+
+    return 0;
+}
+
+Output :
+Value of npos: 18446744073709551615
+Position returned by find(): 18446744073709551615
+'z' was not found in the string.
