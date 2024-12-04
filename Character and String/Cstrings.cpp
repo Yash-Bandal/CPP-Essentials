@@ -79,7 +79,7 @@ int main() {
     cout << endl;
          
          
-// ========== Substring ========== 
+// ========== Substring ========== //substr(position , length)..not (strt,end)
     cout << "\nSubstring" << "\n------------------------------------------" << endl;
     s1 = "This is a test";
 
