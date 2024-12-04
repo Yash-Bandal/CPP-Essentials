@@ -105,7 +105,7 @@ int main() {
     
     cout << "Your full name is: " << full_name << endl;
     
-// ========== Find ========== 
+// ========== Find ==========   position = string.find(word_in_that_string)
     cout << "\nfind" << "\n------------------------------------------" << endl;
 
     s1 = "The secret word is Boo";
