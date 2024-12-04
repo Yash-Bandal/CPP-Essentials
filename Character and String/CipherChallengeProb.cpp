@@ -83,7 +83,7 @@ int main()
     {
       size_t position=key.find(c);
       //cout<<position<<endl;
-      if(position!=string::npos)
+      if(position!=string::npos)  //means if position is not out of range..or position is not unimaginable index...think on npos as a very big index unreachable..1244352345352345
       {
           char new_char=alphabet.at(position);
           decrypted_msg+=new_char;
