@@ -82,6 +82,8 @@ public:
     static int count;
     static void showCount() { 
         cout << "Count: " << count << endl; 
+        int nonstatic = 1;
+        cout<<"NS :"<<nonstatic<<endl;
     }
 };
 
@@ -95,6 +97,8 @@ int main() {
 ### Output:
 ```
 Count: 5
+NS :1
+
 ```
 📌 **Use Case:** Used for **utility functions** that do not depend on instance-specific data.
 
@@ -128,4 +132,3 @@ int main() {
 
 ---
 
-This covers all aspects of `static` in C++. 🚀 Let me know if you need additional examples!
